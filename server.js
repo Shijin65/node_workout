@@ -12,29 +12,32 @@ const PORT = 5000;
 
 
 const server = http.createServer((req,res) => {
-    req.movie = movies;
+    req.movies = movies;
     switch(req.method){
         case "GET":
             getReq(req,res);
             break;
+
             case "POST":
             postReq(req,res);
             break;
+
             case "PUT":
             putReq(req,res);
             break;
+              
             case "DELETE":
             deleteReq(req,res);
             break;
 
             default:
-
-            res.writeHeader(404,{"content-type":"applocation/json"});
-          
-            res.end(JSON.stringify({title:"NOT FOUND",message:"ROUTE NOT FOUND"}));
+            res.statusCode=404;
+            res.setHeader=("content-type","applocation/json");
+            res.write(JSON.stringify({title:"NOT FOUND",message:"ROUTE NOT FOUND"}))
+            res.end();
     }
     
 });
-server.listen(PORT ,()=>{
+server.listen(PORT ,()=>{ 
     console.log(`the server is started in port:${PORT}`)
 })
