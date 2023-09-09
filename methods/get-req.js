@@ -22,9 +22,9 @@ module.exports=(req,res)=>{
              res.end();
         }else{
             res.statusCode=404;
-        res.setHeader=("content-type","applocation/json");
-        res.write(JSON.stringify({title:"MOVIE NOT FOUND",message:"Check wheather the movie ID is correct"}))
-        res.end();
+            res.setHeader=("content-type","applocation/json");
+            res.write(JSON.stringify({title:"MOVIE NOT FOUND",message:"Check wheather the movie ID is correct"}))
+            res.end();
         }
     }
 

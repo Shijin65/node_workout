@@ -32,12 +32,12 @@ const server = http.createServer((req,res) => {
 
             default:
             res.statusCode=404;
-            res.setHeader=("content-type","applocation/json");
+            res.setHeader("content-type","applocation/json");
             res.write(JSON.stringify({title:"NOT FOUND",message:"ROUTE NOT FOUND"}))
             res.end();
     }
     
 });
-server.listen(PORT ,()=>{ 
+    server.listen(PORT ,()=>{ 
     console.log(`the server is started in port:${PORT}`)
 })
