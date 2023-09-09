@@ -22,6 +22,12 @@ module.exports=(req,res)=>{
             res.end(console.log('the movie was deleted'));
         }
 
+        }else {
+            res.statusCode=404;
+            res.setHeader("content-type","applocation/json");
+            res.write(JSON.stringify({title:"NOT FOUND",message:"ROUTE NOT FOUND"}))
+            res.end();
+    
         }
     
     }
