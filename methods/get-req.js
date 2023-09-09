@@ -2,7 +2,7 @@ module.exports=(req,res)=>{
    let baseUrl = req.url.substring(0 , req.url.lastIndexOf("/") + 1);
  
    let id = req.url.split("/")[3];
-   console.log(id);
+   
     if (req.url === "/api/movies") {
         
         res.statuscode = 200;
